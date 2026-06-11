@@ -1,6 +1,6 @@
 """
 app.py — Entry point for the Church Rota App
-Handles: page config, login, role-based navigation routing, logout
+Handles: page config, login, role-based navigation routing, logout.
 
 Run with:  streamlit run app.py
 """
