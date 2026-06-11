@@ -45,5 +45,5 @@ credentials:
 # expiry_days: how long the "remember me" session lasts (0 = session only)
 cookie:
   name: church_rota_auth
-  key: CHANGE_THIS_TO_A_LONG_RANDOM_SECRET_STRING
+  key: d6521d485ff53d18243169c4b75666a69a3b04313726325d839426ee9c4fb37d
   expiry_days: 7
