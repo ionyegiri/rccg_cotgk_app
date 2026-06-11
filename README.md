@@ -1,2 +1,2 @@
 # rccg_cotgk_app
-Repo for streamlit host of church olanning and rota app
+Repo for streamlit host of church planning and rota app
