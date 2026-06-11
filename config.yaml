@@ -1,0 +1,49 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# config.yaml — Church Rota App user credentials & cookie config
+#
+# IMPORTANT:
+#   - Commit this file to GitHub (passwords are bcrypt-hashed, NOT plain text)
+#   - Replace the demo users below with your real congregation leaders
+#   - To generate a new hashed password run:
+#       python3 -c "import bcrypt; print(bcrypt.hashpw(b'YourPassword', bcrypt.gensalt()).decode())"
+#   - Supported roles: admin | editor | viewer
+# ──────────────────────────────────────────────────────────────────────────────
+
+credentials:
+  usernames:
+
+    # ── ADMIN — full access including settings page ───────────────────────────
+    pastor_john:
+      email: pastor.john@mychurch.org
+      first_name: John
+      last_name: Smith
+      role: admin
+      # Plain-text equivalent: AdminPass123!  ← CHANGE BEFORE GOING LIVE
+      password: "$2b$12$XlqGhH7DouEJSoEad9l16u1xOkEbPSJs7pXyg/lNQ724pIxmdQ.Tu"
+
+    # ── EDITOR — rota + members management, no admin settings ────────────────
+    rota_coordinator:
+      email: rota@mychurch.org
+      first_name: Sarah
+      last_name: Jones
+      role: editor
+      # Plain-text equivalent: EditorPass123!  ← CHANGE BEFORE GOING LIVE
+      password: "$2b$12$ycdec9f.iq143f9yfIS0Y.dswpCviwU3IONkFmo2I0uFuLrro4kfm"
+
+    # ── VIEWER — personal rota + notifications (read-only) ───────────────────
+    volunteer_mary:
+      email: mary.volunteer@mychurch.org
+      first_name: Mary
+      last_name: MacDonald
+      role: viewer
+      # Plain-text equivalent: ViewerPass123!  ← CHANGE BEFORE GOING LIVE
+      password: "$2b$12$ZqKgYr5fpoEQXu7UXKbXSuQMVgixdQvFrThuOjCj9KWAttYuR67Cy"
+
+# ── Session cookie settings ───────────────────────────────────────────────────
+# name:        cookie name stored in the browser (keep it unique to your app)
+# key:         secret signing key — change this to a long random string
+# expiry_days: how long the "remember me" session lasts (0 = session only)
+cookie:
+  name: church_rota_auth
+  key: CHANGE_THIS_TO_A_LONG_RANDOM_SECRET_STRING
+  expiry_days: 7
