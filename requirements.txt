@@ -1,9 +1,9 @@
 # requirements.txt
 # This file lists the Python dependencies for the rota management app.
-streamlit == 1.50.0  #Core app framework — latest stable streamlit
-streamlit-authenticator ==  0.4.2;   # Handles login UI + session state with config.yaml discuss.streamlit
-bcrypt == 5.0.0   # Password hashing used by streamlit-authenticator under the hood piwheels
-PyYAML == 6.0.3   # Parses config.yaml for credentials stackoverflow
-supabase == 2.31.0  # Python client for all DB queries in utils/db.py github
-sendgrid == 6.12.5  # Email delivery for utils/notifications.py pypi
-pandas == 2.3.3   # DataFrame manipulation for rota tables and member lists
+streamlit #== 1.50.0  #Core app framework — latest stable streamlit
+streamlit_authenticator #==  0.4.2;   # Handles login UI + session state with config.yaml discuss.streamlit
+bcrypt #== 5.0.0   # Password hashing used by streamlit-authenticator under the hood piwheels
+PyYAML #== 6.0.3   # Parses config.yaml for credentials stackoverflow
+supabase #== 2.31.0  # Python client for all DB queries in utils/db.py github
+sendgrid #== 6.12.5  # Email delivery for utils/notifications.py pypi
+pandas #== 2.3.3   # DataFrame manipulation for rota tables and member lists
