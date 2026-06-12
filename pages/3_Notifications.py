@@ -54,7 +54,9 @@ else:
     )
 
     st.divider()
-
+    #--- Temporary Debug-----#
+    st.write("SENDGRID key present:", bool(st.secrets.get("SENDGRID_API_KEY")))
+    st.write("SENDGRID key prefix:", st.secrets.get("SENDGRID_API_KEY", "")[:5])
     # ── Send all pending ──────────────────────────────────────────────────────
     st.subheader("📨 Send all pending notifications")
     st.caption("This will email every member in the table above.")
