@@ -89,7 +89,8 @@ def send_rota_notification(
         else:
             return False, f"Unexpected status {response.status_code} for {to_email}"
     except Exception as e:
-        return False, f"Failed to send to {to_email}: {str(e)}"
+      body = getattr(e, "body", None)
+      return False, f"Failed to send to {to_email}: {str(e)} | body={body}"
 
 
 # ── Bulk notifications ────────────────────────────────────────────────────────
