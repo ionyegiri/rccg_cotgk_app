@@ -19,7 +19,7 @@ credentials:
       last_name: Smith
       role: admin
       # Plain-text equivalent: AdminPass123!  ← CHANGE BEFORE GOING LIVE
-      password: "$2b$12$XlqGhH7DouEJSoEad9l16u1xOkEbPSJs7pXyg/lNQ724pIxmdQ.Tu"
+      password: "$2b$12$st6uB3cFp0xSiL43Zvkdcu8Nf.mSBrBhY.hQbIqwREt7s6e./vY.i"
 
     # ── EDITOR — rota + members management, no admin settings ────────────────
     rota_coordinator:
