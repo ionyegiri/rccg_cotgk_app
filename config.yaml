@@ -20,6 +20,14 @@ credentials:
       role: admin
       # Plain-text equivalent: AdminPass123!  ← CHANGE BEFORE GOING LIVE
       password: "$2b$12$st6uB3cFp0xSiL43Zvkdcu8Nf.mSBrBhY.hQbIqwREt7s6e./vY.i"
+    #-------------------------------
+    iyke_:
+      email: ionyegiri@gmail.com
+      first_name: Iyke
+      last_name: Ony
+      role: admin
+      # Plain-text equivalent: COTGKorg123!  ← CHANGE BEFORE GOING LIVE
+      password: "$2b$12$QUsmJ5cuuxu37G.ttfCLZOTG0lAcMVHf6a.V89f/FsEfyZ92elD7m"
 
     # ── EDITOR — rota + members management, no admin settings ────────────────
     rota_coordinator:
