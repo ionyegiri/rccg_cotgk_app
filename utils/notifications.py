@@ -127,6 +127,7 @@ def send_rota_notification(
     service_type: str = "",
     role: str = "",
     to_name: str | None = None,
+    rota_role: str | None = None,
 ) -> tuple[bool, str]:
     """
     Send one rota assignment notification.
@@ -134,10 +135,12 @@ def send_rota_notification(
     Supports both:
     - member_name=...
     - to_name=...
+    - role=... / rota_role=...
 
-    to_name is accepted for compatibility with the Notifications page.
+    `rota_role` is accepted for compatibility with the Notifications page.
     """
     recipient_name = to_name or member_name
+    assignment_role = rota_role or role
 
     result = send_assignment_email(
         to_email=to_email,
@@ -146,7 +149,7 @@ def send_rota_notification(
             {
                 "service_date": service_date,
                 "service_type": service_type,
-                "role": role,
+                "role": assignment_role,
             }
         ],
         email_kind="assignment",
@@ -293,6 +296,7 @@ def send_reminder(
     service_date,
     service_type: str,
     role: str,
+    rota_role: str | None = None,
 ):
     """
     Backwards-compatible wrapper for the Notifications page.
@@ -300,6 +304,7 @@ def send_reminder(
     Returns:
         tuple[bool, str]
     """
+    assignment_role = rota_role or role
     result = send_reminder_email(
         to_email=to_email,
         member_name=member_name,
@@ -307,7 +312,7 @@ def send_reminder(
             {
                 "service_date": service_date,
                 "service_type": service_type,
-                "role": role,
+                "role": assignment_role,
             }
         ],
     )
