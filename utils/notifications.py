@@ -279,7 +279,7 @@ def send_bulk_rota_notifications(
 # ── Reminder emails ────────────────────────────────────────────────────────────
 
 
-def send_reminder_email(
+def send_reminder(
     to_email: str,
     member_name: str,
     assignments: Sequence[Mapping[str, Any]],
@@ -318,7 +318,7 @@ def send_bulk_reminders(
             continue
 
         results.append(
-            send_reminder_email(
+            send_reminder(
                 to_email=member["email"],
                 member_name=member["name"],
                 assignments=member_entries,
