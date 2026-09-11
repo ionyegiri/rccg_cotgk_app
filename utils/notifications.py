@@ -278,8 +278,34 @@ def send_bulk_rota_notifications(
 
 # ── Reminder emails ────────────────────────────────────────────────────────────
 
-
 def send_reminder(
+    to_email: str,
+    member_name: str,
+    service_date,
+    service_type: str,
+    role: str,
+):
+    """
+    Backwards-compatible wrapper for the Notifications page.
+
+    Returns:
+        tuple[bool, str]
+    """
+    result = send_reminder_email(
+        to_email=to_email,
+        member_name=member_name,
+        assignments=[
+            {
+                "service_date": service_date,
+                "service_type": service_type,
+                "role": role,
+            }
+        ],
+    )
+
+    return result.success, result.message
+
+def send_reminder_email(
     to_email: str,
     member_name: str,
     assignments: Sequence[Mapping[str, Any]],
@@ -318,7 +344,7 @@ def send_bulk_reminders(
             continue
 
         results.append(
-            send_reminder(
+            send_reminder_email(
                 to_email=member["email"],
                 member_name=member["name"],
                 assignments=member_entries,
@@ -354,3 +380,12 @@ def mark_entries_as_notified(
     client = get_client()
     for entry_id in entry_ids:
         client.table("rota").update({"notified": True}).eq("id", entry_id).execute()
+
+def mark_notified(entry_id: int) -> None:
+    """Compatibility alias for the existing Notifications page."""
+    mark_as_notified(entry_id)
+
+
+def mark_all_notified(entry_ids) -> None:
+    """Compatibility alias for marking multiple entries as notified."""
+    mark_entries_as_notified(entry_ids)
