@@ -26,8 +26,8 @@ credentials:
       first_name: Ikechukwu
       last_name: Onyegiri
       role: admin
-      # Plain-text equivalent: COTGKorg123!  ← CHANGE BEFORE GOING LIVE
-      password: "$2b$12$QUsmJ5cuuxu37G.ttfCLZOTG0lAcMVHf6a.V89f/FsEfyZ92elD7m"
+      # Plain-text equivalent: Cotgkorg123!  ← CHANGE BEFORE GOING LIVE
+      password: "$2b$12$tzpU8hawQRwuR7p9V9bVDuFDGYtpY/eZ0ZrZF5sLxGWNnWjGT23rO"
 
     # ── EDITOR — rota + members management, no admin settings ────────────────
     rota_coordinator:
