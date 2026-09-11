@@ -122,18 +122,26 @@ def _email_result(recipient: str, response: Any) -> NotificationResult:
 
 def send_rota_notification(
     to_email: str,
-    member_name: str,
-    service_date: Any,
-    service_type: str,
-    role: str,
+    member_name: str = "Volunteer",
+    service_date=None,
+    service_type: str = "",
+    role: str = "",
+    to_name: str | None = None,
 ) -> tuple[bool, str]:
-    """Send one assignment notification.
-
-    This keeps the original function signature used by Rota Manager.
     """
+    Send one rota assignment notification.
+
+    Supports both:
+    - member_name=...
+    - to_name=...
+
+    to_name is accepted for compatibility with the Notifications page.
+    """
+    recipient_name = to_name or member_name
+
     result = send_assignment_email(
         to_email=to_email,
-        member_name=member_name,
+        member_name=recipient_name,
         assignments=[
             {
                 "service_date": service_date,
@@ -143,6 +151,7 @@ def send_rota_notification(
         ],
         email_kind="assignment",
     )
+
     return result.success, result.message
 
 
